@@ -1,0 +1,100 @@
+<div class="container allUsers-container">
+  <a mat-raised-button color="primary" routerLink="/add-User">Add</a>
+</div>
+<div class="container allUsers-container">
+  <table mat-table [dataSource]="allUsersSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="IDUser">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let element">"{{ element.IDUser }}"</td>
+    </ng-container>
+
+    <ng-container matColumnDef="UserName">
+      <th mat-header-cell *matHeaderCellDef>User Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.UserName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="UserPassword">
+      <th mat-header-cell *matHeaderCellDef>Password</th>
+      <td mat-cell *matCellDef="let element">{{ element.UserPassword }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="FirstName">
+      <th mat-header-cell *matHeaderCellDef>FirstName</th>
+      <td mat-cell *matCellDef="let element">{{ element.FirstName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="LastName">
+      <th mat-header-cell *matHeaderCellDef>LastName</th>
+      <td mat-cell *matCellDef="let element">{{ element.LastName }}</td>
+    </ng-container>
+
+
+
+
+    <ng-container matColumnDef="UserAdress">
+      <th mat-header-cell *matHeaderCellDef>UserAdress</th>
+      <td mat-cell *matCellDef="let element">{{ element.UserAdress }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="UserPhone">
+      <th mat-header-cell *matHeaderCellDef>UserPhone</th>
+      <td mat-cell *matCellDef="let element">{{ element.UserPhone }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Gender">
+      <th mat-header-cell *matHeaderCellDef>Gender</th>
+      <td mat-cell *matCellDef="let element">{{ element.Gender }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="IDShop">
+      <th mat-header-cell *matHeaderCellDef>IDShop</th>
+      <td mat-cell *matCellDef="let element">{{ element.IDShop }}</td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="Email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.Email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="DateOfBorn">
+      <th mat-header-cell *matHeaderCellDef>DateOfBorn</th>
+      <td mat-cell *matCellDef="let element">{{ element.DateOfBorn }}</td>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['/edit-User', element.IDUser]"
+          ><mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="edit"
+          >
+          </mat-icon
+        ></a>
+        <mat-icon
+          (click)="openDeleteModal(element.IDUser)"
+          aria-hidden="false"
+          aria-label="Example delete icon"
+          fontIcon="delete"
+        >
+        </mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+
+
+
+  
+ 
+
+
+
+</div>
